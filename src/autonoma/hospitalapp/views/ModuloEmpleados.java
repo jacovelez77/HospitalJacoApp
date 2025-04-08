@@ -4,6 +4,8 @@
  */
 package autonoma.hospitalapp.views;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Jacobo Velez Valencia
@@ -15,6 +17,13 @@ public class ModuloEmpleados extends javax.swing.JFrame {
      */
     public ModuloEmpleados() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        try {
+            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/hospitalapp/images/hospital.png")).getImage()
+            );
+        }catch(Exception e){
+            
+        }
     }
 
     /**
