@@ -6,7 +6,7 @@ package autonoma.hospitalapp.views;
 
 /**
  *
- * @author USER
+ * @author Jacobo Velez Valencia
  */
 public class ModuloEmpleados extends javax.swing.JFrame {
 
