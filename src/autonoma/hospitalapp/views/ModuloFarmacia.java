@@ -4,6 +4,8 @@
  */
 package autonoma.hospitalapp.views;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Jacobo Velez Valencia
@@ -12,10 +14,19 @@ public class ModuloFarmacia extends javax.swing.JDialog {
 
     /**
      * Creates new form ModuloFarmacia
+     * @param parent
+     * @param modal
      */
     public ModuloFarmacia(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
+        try {
+            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/hospitalapp/images/hospital.png")).getImage()
+            );
+        }catch(Exception e){
+            
+        }
     }
 
     /**
