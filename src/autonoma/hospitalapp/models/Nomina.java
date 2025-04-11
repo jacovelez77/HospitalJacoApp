@@ -68,21 +68,41 @@ public class Nomina {
         return total;
     }
 
-    public void generarNomina() {
-        this.totalSalarioNomina = calcularTotalSalario();
-        this.fecha = new Date();
+  /**
+ * Genera la nómina del hospital actualizando el total de salarios y la fecha de generación.
+ */
+public void generarNomina() {
+    // Calcula la suma total de salarios de todos los empleados
+    this.totalSalarioNomina = calcularTotalSalario();
+
+    // Asigna la fecha actual como fecha de generación de la nómina
+    this.fecha = new Date();
+}
+
+/**
+ * Descuenta el total de la nómina del presupuesto del hospital.
+ * Si el presupuesto resulta negativo, cambia el estado del hospital a inactivo
+ * y lanza una excepción indicando quiebra.
+ *
+ * @param hospital Hospital al que se le descontará el valor de la nómina.
+ * @throws DeclararQuiebraException Si el presupuesto del hospital queda por debajo de 0.
+ */
+public void descontarNomina(Hospital hospital) throws DeclararQuiebraException {
+    double totalSalarios = 0;
+
+    // Suma todos los salarios de los empleados
+    for (Empleado empleado : empleados) {
+        totalSalarios += empleado.calcularSalario();
     }
 
-    public void descontarNomina(Hospital hospital) throws DeclararQuiebraException {
-        double totalSalarios = 0;
-        for (Empleado empleado : empleados) {
-            totalSalarios += empleado.calcularSalario();
-        }
-        hospital.setPresupuesto(hospital.getPresupuesto() - totalSalarios);
+    // Resta el total de salarios del presupuesto del hospital
+    hospital.setPresupuesto(hospital.getPresupuesto() - totalSalarios);
 
-        if (hospital.getPresupuesto() < 0) {
-            hospital.setEstado(false);
-            throw new DeclararQuiebraException();
-        }
+    // Si el presupuesto queda en negativo, el hospital entra en quiebra
+    if (hospital.getPresupuesto() < 0) {
+        hospital.setEstado(false); // Hospital queda inactivo
+        throw new DeclararQuiebraException(); // Se lanza una excepción personalizada
     }
+}
+
 }

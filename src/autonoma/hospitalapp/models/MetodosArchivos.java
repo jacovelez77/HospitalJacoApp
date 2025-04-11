@@ -1,14 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package autonoma.hospitalapp.models;
-
-/**
- *
- * @author Jacobo Velez Valencia
- */
-
+import autonoma.hospitalapp.models.Empleado;
+import autonoma.hospitalapp.models.Gerente;
+import autonoma.hospitalapp.models.Hospital;
+import autonoma.hospitalapp.models.Localizacion;
+import autonoma.hospitalapp.models.Nomina;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,11 +10,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.in;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class MetodosArchivos {
 
@@ -156,28 +147,30 @@ public class MetodosArchivos {
         return gerente;
     }
 
-   public Localizacion asignarAtributosLocalizacion(String archivo) {
-        Localizacion localizacion = new Localizacion();
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(archivo));
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                String[] partes = linea.split(": ");
-                if (partes.length == 2) {
-                    String nombreCampo = partes[0];
-                    String valorCampo = partes[1];
-                    
-                    if (nombreCampo.equals("Latitud")) {
-                        localizacion.setLatitud(Double.parseDouble(valorCampo));
-                    } else if (nombreCampo.equals("Longitud")) {
-                        localizacion.setLongitud(Double.parseDouble(valorCampo));
-                    }
+     public Localizacion asignarAtributosLocalizacion(String archivo) {
+       double latitud = 0.0;
+       double longitud = 0.0;
+
+     try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+        String linea;
+        while ((linea = br.readLine()) != null) {
+            String[] partes = linea.split(": ");
+            if (partes.length == 2) {
+                String nombreCampo = partes[0];
+                String valorCampo = partes[1];
+
+                if (nombreCampo.equalsIgnoreCase("Latitud")) {
+                    latitud = Double.parseDouble(valorCampo);
+                } else if (nombreCampo.equalsIgnoreCase("Longitud")) {
+                    longitud = Double.parseDouble(valorCampo);
                 }
             }
-            br.close();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-        return localizacion;
+    } catch (IOException e) {
+        e.printStackTrace();
     }
+
+    return new Localizacion(longitud, latitud);
+}
+
 }
