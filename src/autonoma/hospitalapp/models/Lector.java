@@ -4,10 +4,15 @@
  */
 package autonoma.hospitalapp.models;
 
+import java.io.IOException;
+import java.util.List;
+
 /**
  *
  * @author Jacobo Velez Valencia
  */
 public interface Lector {
-    
+    List<String> leer(String ruta) throws IOException;
 }
+    
+
