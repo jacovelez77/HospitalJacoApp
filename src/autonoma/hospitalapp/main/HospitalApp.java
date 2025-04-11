@@ -4,10 +4,14 @@
  */
 package autonoma.hospitalapp.main;
 
+import autonoma.hospitalapp.views.VentanaPrincipal;
+
 
 public class HospitalApp {
 
     public static void main(String[] args) {
+        VentanaPrincipal ventana= new VentanaPrincipal();
+        ventana.setVisible(true);
       
 
 
