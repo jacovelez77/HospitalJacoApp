@@ -29,8 +29,8 @@ public class HospitalApp {
         ventana.setVisible(true);
 
         // Mostrar ventana de reportes con el hospital ya configurado
-        Reportes reportes = new Reportes(ventana, true, hospital, ventana);
-        reportes.setVisible(true);
+        //Reportes reportes = new Reportes(ventana, true, hospital, ventana);
+        //reportes.setVisible(true);
     }
     
 }
