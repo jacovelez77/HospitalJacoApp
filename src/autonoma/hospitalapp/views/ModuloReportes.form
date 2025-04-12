@@ -141,7 +141,7 @@
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
-                              <Component id="sendReport1" min="-2" max="-2" attributes="0"/>
+                              <Component id="sendReport" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="282" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -164,7 +164,7 @@
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace pref="202" max="32767" attributes="0"/>
-                              <Component id="sendReport1" min="-2" max="-2" attributes="0"/>
+                              <Component id="sendReport" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -189,12 +189,12 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saExitActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="sendReport1">
+                <Component class="javax.swing.JButton" name="sendReport">
                   <Properties>
                     <Property name="label" type="java.lang.String" value="Enviar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sendReport1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sendReportActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtReportes">

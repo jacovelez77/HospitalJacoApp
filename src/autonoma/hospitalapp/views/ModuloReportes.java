@@ -49,7 +49,7 @@ public class ModuloReportes extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         saExit = new javax.swing.JButton();
-        sendReport1 = new javax.swing.JButton();
+        sendReport = new javax.swing.JButton();
         txtReportes = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -77,10 +77,10 @@ public class ModuloReportes extends javax.swing.JFrame {
             }
         });
 
-        sendReport1.setLabel("Enviar");
-        sendReport1.addActionListener(new java.awt.event.ActionListener() {
+        sendReport.setLabel("Enviar");
+        sendReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sendReport1ActionPerformed(evt);
+                sendReportActionPerformed(evt);
             }
         });
 
@@ -115,7 +115,7 @@ public class ModuloReportes extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel5Layout.createSequentialGroup()
                     .addGap(180, 180, 180)
-                    .addComponent(sendReport1)
+                    .addComponent(sendReport)
                     .addContainerGap(282, Short.MAX_VALUE)))
         );
         jPanel5Layout.setVerticalGroup(
@@ -133,7 +133,7 @@ public class ModuloReportes extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                     .addContainerGap(202, Short.MAX_VALUE)
-                    .addComponent(sendReport1)
+                    .addComponent(sendReport)
                     .addGap(54, 54, 54)))
         );
 
@@ -244,15 +244,17 @@ public class ModuloReportes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnReportesMouseExited
 
     private void saExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saExitActionPerformed
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_saExitActionPerformed
 
-    private void sendReport1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendReport1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sendReport1ActionPerformed
+    private void sendReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendReportActionPerformed
+        String reportes = this.txtReportes.getText();
+        //this.hospital.sendReport(reportes);
+    }//GEN-LAST:event_sendReportActionPerformed
 
     private void txtReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReportesActionPerformed
-        // TODO add your handling code here:
+        
+       
     }//GEN-LAST:event_txtReportesActionPerformed
 
    
@@ -268,7 +270,7 @@ public class ModuloReportes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JButton saExit;
-    private javax.swing.JButton sendReport1;
+    private javax.swing.JButton sendReport;
     private javax.swing.JTextField txtReportes;
     // End of variables declaration//GEN-END:variables
 
